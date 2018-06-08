@@ -10,6 +10,8 @@ export class Playground extends React.Component {
     firstName: 'Nate',
     lastName: 'Norberg',
     username: 'natenorberg',
+    showInitials: true,
+    backgroundStyle: 'gradient',
   };
 
   setField = (name, value) => {
