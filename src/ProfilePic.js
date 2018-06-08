@@ -7,15 +7,19 @@ const getInitials = settings =>
 const colorHash = new ColorHash({hue: 8, lightness: 0.45, saturation: 0.65});
 
 const getBackground = settings => {
+  const seed = settings.username;
+  // .split()
+  // .reverse()
+  // .join('');
   switch (settings.backgroundStyle) {
     case 'gradient':
-      return `linear-gradient(to bottom right, ${colorHash.hex(
-        settings.username,
-      )} 0%, ${colorHash.hex(settings.username + '-')}) 100%`;
+      return `linear-gradient(to bottom right, ${colorHash.hex(seed)} 0%, ${colorHash.hex(
+        seed + '-',
+      )}) 100%`;
 
     case 'solid':
     default:
-      return colorHash.hex(settings.username);
+      return colorHash.hex(seed);
   }
 };
 
