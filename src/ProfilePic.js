@@ -4,16 +4,14 @@ import ColorHash from 'color-hash';
 const getInitials = settings =>
   settings.firstName.charAt(0).toUpperCase() + settings.lastName.charAt(0).toUpperCase();
 
-const colorHash = new ColorHash({
-  hue: [{min: 30, max: 90}, {min: 180, max: 210}, {min: 270, max: 285}],
-});
+const colorHash = new ColorHash({hue: 8, lightness: 0.45, saturation: 0.65});
 
 const getBackground = settings => {
   switch (settings.backgroundStyle) {
     case 'gradient':
       return `linear-gradient(to bottom right, ${colorHash.hex(
         settings.username,
-      )} 40%, ${colorHash.hex(settings.username + '-')}) 100%`;
+      )} 0%, ${colorHash.hex(settings.username + '-')}) 100%`;
 
     case 'solid':
     default:
