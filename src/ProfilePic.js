@@ -52,7 +52,7 @@ const ProfilePic = ({settings}) => {
           bgSize={bgSize * 2}
         />
       )}
-      <div style={{fontSize: 70, fontFamily: 'Roboto', color: 'rgba(255,255,255,0.9', zIndex: 10}}>
+      <div style={{fontSize: 70, fontFamily: 'Roboto', color: '#fff', zIndex: 10}}>
         {settings.showInitials && getInitials(settings)}
       </div>
     </div>
