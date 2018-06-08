@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Settings from './Settings';
+import ProfileView from './ProfileView';
 
 export class Playground extends React.Component {
   state = {
@@ -30,6 +31,7 @@ export class Playground extends React.Component {
           <Card>
             <CardContent>
               <Typography variant="title">Profile</Typography>
+              <ProfileView settings={this.state} />
             </CardContent>
           </Card>
         </div>
