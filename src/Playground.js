@@ -11,7 +11,7 @@ export class Playground extends React.Component {
     lastName: 'Norberg',
     username: 'natenorberg',
     showInitials: true,
-    backgroundStyle: 'triangles',
+    backgroundStyle: 'gradient',
   };
 
   setField = (name, value) => {
