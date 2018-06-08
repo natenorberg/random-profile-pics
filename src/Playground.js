@@ -20,8 +20,8 @@ export class Playground extends React.Component {
 
   render() {
     return (
-      <div style={{display: 'flex'}}>
-        <div style={{flex: '1 1 50%', margin: 20}}>
+      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        <div style={{flex: '1 1 auto', margin: 20, minWidth: 300}}>
           <Card>
             <CardContent>
               <Typography variant="title">User Settings</Typography>
@@ -29,7 +29,7 @@ export class Playground extends React.Component {
             </CardContent>
           </Card>
         </div>
-        <div style={{flex: '1 1 50%', margin: 20}}>
+        <div style={{flex: '1 1 auto', margin: 20, minWidth: 300}}>
           <Card>
             <CardContent>
               <Typography variant="title">Profile</Typography>
