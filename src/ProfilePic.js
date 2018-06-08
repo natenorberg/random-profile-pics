@@ -14,7 +14,7 @@ const getBackground = settings => {
   switch (settings.backgroundStyle) {
     case 'gradient':
       return `linear-gradient(to bottom right, ${colorHash.hex(seed)} 0%, ${colorHash.hex(
-        seed + '-',
+        seed + '-alt',
       )}) 100%`;
 
     case 'solid':
