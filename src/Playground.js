@@ -20,7 +20,7 @@ export class Playground extends React.Component {
 
   render() {
     return (
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap-reverse'}}>
         <div style={{flex: '1 1 auto', margin: 20, minWidth: 300}}>
           <Card>
             <CardContent>
