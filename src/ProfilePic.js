@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ColorHash from 'color-hash';
 import Topo from './Topo';
+import Triangles from './Triangles';
 import {lighten} from 'polished';
 
 const getInitials = settings =>
@@ -50,6 +51,15 @@ const ProfilePic = ({settings}) => {
           startX={startX}
           startY={startY}
           bgSize={bgSize * 2}
+        />
+      )}
+      {settings.backgroundStyle === 'triangles' && (
+        <Triangles
+          color1={getBackground(settings)}
+          color2={lighten(0.2, colorHash.hex(settings.username + '-alt'))}
+          startX={startX / 4}
+          startY={startY / 4}
+          bgSize={bgSize * 4}
         />
       )}
       <div style={{fontSize: 70, fontFamily: 'Roboto', color: '#fff', zIndex: 10}}>

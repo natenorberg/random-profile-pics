@@ -63,6 +63,7 @@ export const Settings = ({settings, setField}) => (
           <MenuItem value="solid">Solid</MenuItem>
           <MenuItem value="gradient">Gradient</MenuItem>
           <MenuItem value="topo">Topography</MenuItem>
+          <MenuItem value="triangles">Triangles</MenuItem>
         </Select>
       </FormControl>
     </div>
