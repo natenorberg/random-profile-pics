@@ -4,7 +4,8 @@ import Topo from './Topo';
 import {lighten} from 'polished';
 
 const getInitials = settings =>
-  settings.firstName.charAt(0).toUpperCase() + settings.lastName.charAt(0).toUpperCase();
+  settings.firstName.charAt(0).toUpperCase() +
+  settings.lastName.charAt(0).toUpperCase();
 
 const colorHash = new ColorHash({hue: 8, lightness: 0.45, saturation: 0.65});
 
@@ -15,9 +16,9 @@ const getBackground = settings => {
   // .join('');
   switch (settings.backgroundStyle) {
     case 'gradient':
-      return `linear-gradient(to bottom right, ${colorHash.hex(seed)} 0%, ${colorHash.hex(
-        seed + '-alt',
-      )}) 100%`;
+      return `linear-gradient(to bottom right, ${colorHash.hex(
+        seed,
+      )} 0%, ${colorHash.hex(seed + '-alt')}) 100%`;
 
     case 'solid':
     default:
@@ -52,7 +53,9 @@ const ProfilePic = ({settings}) => {
           bgSize={bgSize * 2}
         />
       )}
-      <div style={{fontSize: 70, fontFamily: 'Roboto', color: 'rgba(255,255,255,0.9', zIndex: 10}}>
+      <div
+        style={{fontSize: 70, fontFamily: 'Roboto', color: '#fff', zIndex: 10}}
+      >
         {settings.showInitials && getInitials(settings)}
       </div>
     </div>
