@@ -1,4 +1,5 @@
 import * as React from 'react';
+import toMaterialStyle from 'material-color-hash';
 import ColorHash from 'color-hash';
 import Topo from './Topo';
 import Triangles from './Triangles';
@@ -7,22 +8,21 @@ import {lighten} from 'polished';
 const getInitials = settings =>
   settings.firstName.charAt(0).toUpperCase() + settings.lastName.charAt(0).toUpperCase();
 
-const colorHash = new ColorHash({hue: 8, lightness: 0.45, saturation: 0.65});
+const colorHash = new ColorHash();
+
+const getBgColorHash = (seed: string) => toMaterialStyle(seed, 800).backgroundColor;
+const getFgColorHash = (seed: string) => toMaterialStyle(seed, 300).backgroundColor;
 
 const getBackground = settings => {
   const seed = settings.username;
-  // .split()
-  // .reverse()
-  // .join('');
   switch (settings.backgroundStyle) {
     case 'gradient':
-      return `linear-gradient(to bottom right, ${colorHash.hex(seed)} 0%, ${colorHash.hex(
+      return `linear-gradient(to bottom right, ${getBgColorHash(seed)} 0%, ${getBgColorHash(
         seed + '-alt',
-      )}) 100%`;
-
+      )} 100%)`;
     case 'solid':
     default:
-      return colorHash.hex(seed);
+      return getBgColorHash(seed);
   }
 };
 
@@ -47,7 +47,7 @@ const ProfilePic = ({settings}) => {
     >
       {settings.backgroundStyle === 'topo' && (
         <Topo
-          fill={lighten(0.2, colorHash.hex(settings.username + '-alt'))}
+          fill={getFgColorHash(settings.username)}
           startX={startX}
           startY={startY}
           bgSize={bgSize * 2}
@@ -56,7 +56,7 @@ const ProfilePic = ({settings}) => {
       {settings.backgroundStyle === 'triangles' && (
         <Triangles
           color1={getBackground(settings)}
-          color2={lighten(0.2, colorHash.hex(settings.username + '-alt'))}
+          color2={getBgColorHash(settings.username + '-alt')}
           startX={startX / 4}
           startY={startY / 4}
           bgSize={bgSize * 4}
